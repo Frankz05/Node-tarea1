@@ -25,13 +25,10 @@ const getRegistration = async (req, res) => {
         });
 
         if (!registration) {
-            return (
-                res.status(404),
-                json({
-                    status: 'error',
-                    message: 'Registration not found',
-                })
-            );
+            return res.status(404).json({
+                status: 'error',
+                message: 'Registration not found',
+            });
         }
 
         res.status(200).json({
